@@ -27,16 +27,15 @@ const managerInput = () => {
       type:"input",
       message:"Please enter your manager's office number."
     },
-
   ]).then(answers=>{
     console.log(answers);
     const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
     console.log(manager);
     employeeArr.push(manager);
     console.log(employeeArr);
-    engineerInput();
-  });
-}
+    employeeTypeInput();
+  })
+};
 
   const engineerInput = () => {
     return inquirer.prompt([
@@ -66,59 +65,67 @@ const managerInput = () => {
       console.log(engineer);
       employeeArr.push(engineer);
       console.log(employeeArr);
+      employeeTypeInput();
+  })
+  };
+
+    const internInput = () => {
+      return inquirer.prompt([
+  {
+    name:"name",
+    type:"input",
+    message:"Please enter your intern's name.", 
+  },
+  {
+    name:"id",
+    type:"input",
+    message:"Please enter your intern's ID number.",  
+  },
+  {
+    name:"email",
+    type:"input",
+    message:"Please enter your intern's e-mail address.",  
+  },
+  {
+    name:"school",
+    type:"input",
+    message:"Please enter the name of your intern's school.",  
+  },
+]).then(answers=>{
+  console.log(answers);
+  const intern = new Intern (answers.name, answers.id, answers.email, answers.school);
+  console.log(engineer);
+  employeeArr.push(engineer);
+  console.log(employeeArr);
+  employeeTypeInput();
+})
+};
+
+const employeeTypeInput = () => {
+  return inquirer.prompt([
+{
+  name:"employeeType",
+  type:"list",
+  message:"Would you like to add another employee or to finish building your team?",
+  choices:["Engineer","Intern","I'm Finished Building My Team"],
+},
+  ]).then (continueBuilding => {
+  switch (continueBuilding.employeeType) {
+    case "Engineer":
+      engineerInput();
+      break;
+    case "Intern":
       internInput();
-  });
-  }
-//     const internInput = () => {
-//       return inquirer.prompt([
-//   {
-//     name:"internName",
-//     type:"input",
-//     message:"Please enter your intern's name.", 
-//   },
-//   {
-//     name:"internID",
-//     type:"input",
-//     message:"Please enter your intern's ID number.",  
-//   },
-//   {
-//     name:"internEmail",
-//     type:"input",
-//     message:"Please enter your intern's e-mail address.",  
-//   },
-//   {
-//     name:"internSchool",
-//     type:"input",
-//     message:"Please enter the name of your intern's school.",  
-//   },
-// ]) moreEmployeeInput ();
-// };
+      break;
+    case "I'm Finished Building My Team":
+      generateHTML();
+      break;
+    default:
+      generateHTML();
+      break;
+  }})
+};
 
-// const moreEmployeeInput = () => {
-//   return inquirer.prompt([
-// {
-//   name:"more",
-//   type:"confirm",
-//   message:"Would you like to add more employees?",
-// },
-// ]) if{
-    // if (answers.more == true) {
-    //   employeeTypeInput();
-    // } else {
-    //   generateHTML();
-    // }
-// }
-// };
-
-// const employeeTypeInput = () => {
-//   return inquirer.prompt([
-// {
-//   name:"employeeType",
-//   type:"list",
-//   message:"Which of these employee types would you like to add?",
-//   choices:["engineer","intern"],
-// },
-//   ])};
 
 // module.exports = generateHTML;
 
