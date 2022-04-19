@@ -118,7 +118,8 @@ const employeeTypeInput = () => {
       internInput();
       break;
     case "I'm Finished Building My Team":
-      employeeArr.forEach((employee)=>console.log(employee.name, employee.email, employee.id, employee.email, employee.github, employee.school, employee.officeNumber));
+      // employeeArr.forEach((employee)=>console.log(employee.name, employee.email, employee.id, employee.email, employee.github, employee.school, employee.officeNumber));
+      employeeArr.forEach(employee => { console.log(employee)})
       break;
     default:
       // generateHTML();
