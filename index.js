@@ -94,8 +94,8 @@ const managerInput = () => {
 ]).then(answers=>{
   console.log(answers);
   const intern = new Intern (answers.name, answers.id, answers.email, answers.school);
-  console.log(engineer);
-  employeeArr.push(engineer);
+  console.log(intern);
+  employeeArr.push(intern);
   console.log(employeeArr);
   employeeTypeInput();
 })
@@ -118,10 +118,11 @@ const employeeTypeInput = () => {
       internInput();
       break;
     case "I'm Finished Building My Team":
-      generateHTML();
+      employeeArr.forEach((employee)=>console.log(employee.name, employee.email, employee.id, employee.email, employee.github, employee.school, employee.officeNumber));
       break;
     default:
-      generateHTML();
+      // generateHTML();
+      // console.log(employeeArr[0]);
       break;
   }})
 };
@@ -132,9 +133,9 @@ const employeeTypeInput = () => {
 const init = () => {
   managerInput()
   // .then((answers) => fs.writeFileSync('./dist/renderedoutput.HTML', generateHTML(answers)))
-  .then((answers)=> console.log('you did it, buddy'))
+  // .then((answers)=> console.log('you did it, buddy'))
   // .then(() => console.log('Successfully wrote to HTML'))
-  .catch((err) => console.error(err))
+  // .catch((err) => console.error(err))
 };
 init();
 
