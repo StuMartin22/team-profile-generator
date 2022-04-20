@@ -4,16 +4,16 @@ const Engineer = require('../lib/engineer');
 const Intern = require('../lib/intern');
 const inquirer = require('inquirer');
 const employeeArr = require('../index');
+const { royalblue } = require('color-name');
 
-function figgerItOut() {
-console.log(employeeArr)
-};
+// function figgerItOut() {
+// console.log(employeeArr)
+// };
 
 // for (let i = 0; i < employeeArr.length; i++) {
 //     const employee = employeeArr[i];
 //     console.log(employee);
 // }
-
 
 
 // function generateMarkdown(employeeArr)
@@ -38,4 +38,35 @@ console.log(employeeArr)
 
 // write file and append file - can append parts together
 
-module.exports = {figgerItOut};
+// module.exports = {figgerItOut};
+
+
+
+//beginning HTML 
+//body --  this is role name , email, id, & {special}
+//body ending
+
+//if role = this then print name email id + x
+//if role = this then print name email id +y
+// if role = this then print name email id +z
+
+// Rle
+// name
+// id
+// variable
+
+// var data1
+//div
+//h5
+// ul card
+// li name
+//li email
+//li id
+
+//var data2 
+// variable li ---- this line gets changed out / everything else same
+
+//var data3
+//div
+//something
+//div
