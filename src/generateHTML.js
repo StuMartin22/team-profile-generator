@@ -3,15 +3,21 @@ const Manager = require('../lib/manager');
 const Engineer = require('../lib/engineer');
 const Intern = require('../lib/intern');
 const inquirer = require('inquirer');
-const { moduleExpression } = require('@babel/types');
-const managerArr = require('../index')
-const engineerArr = required('../index')
-const internArr = required('../index')
+const employeeArr = require('../index');
 
-console.log(managerArr);
-console.log(engineerArr);
-console.log(internArr);
+function figgerItOut() {
+console.log(employeeArr)
+};
 
+// for (let i = 0; i < employeeArr.length; i++) {
+//     const employee = employeeArr[i];
+//     console.log(employee);
+// }
+
+
+
+// function generateMarkdown(employeeArr)
+//     return
 // return
 //   `<!DOCTYPE html>
 // <html lang="en">
@@ -31,3 +37,5 @@ console.log(internArr);
 // }
 
 // write file and append file - can append parts together
+
+module.exports = {figgerItOut};

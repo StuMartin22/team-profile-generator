@@ -1,13 +1,12 @@
 const fs = require('fs');
-// const generateHTML = require('./');
-const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
-const inquirer = require('inquirer')
-const managerArr = [];
-const engineerArr = [];
-const internArr = [];
+const inquirer = require('inquirer');
+const employeeArr = []
+const {figgerItOut} = require('./src/generateHTML')
+
+
 
 const managerInput = () => {
   return inquirer.prompt([
@@ -35,7 +34,7 @@ const managerInput = () => {
     // console.log(answers);
     const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
     // console.log(manager);
-    managerArr.push(manager);
+    employeeArr.push(manager);
     // console.log(employeeArr);
     employeeTypeInput();
   })
@@ -67,7 +66,7 @@ const managerInput = () => {
       // console.log(answers);
       const engineer = new Engineer (answers.name, answers.id, answers.email, answers.gitHub);
       // console.log(engineer);
-      engineerArr.push(engineer);
+      employeeArr.push(engineer);
       // console.log(employeeArr);
       employeeTypeInput();
   })
@@ -99,7 +98,7 @@ const managerInput = () => {
   // console.log(answers);
   const intern = new Intern (answers.name, answers.id, answers.email, answers.school);
   // console.log(intern);
-  internArr.push(intern);
+  employeeArr.push(intern);
   // console.log(employeeArr);
   employeeTypeInput();
 })
@@ -122,26 +121,19 @@ const employeeTypeInput = () => {
       internInput();
       break;
     case "I'm Finished Building My Team":
-  // {(employeeArr) => fs.writeFileSync('./dist/renderedOutput.HTML', generateHTML(employeeArr))
+      figgerItOut();
   // .then(()=> console.log('you did it, buddy'))
   // .then(() => console.log('Successfully wrote to HTML'))
   // .catch((err) => console.error(err))}
-      // generateHTML();
-      // console.log(employeeArr)
-        // console.log(employeeArr);
-      //   console.log(data);
       break;
     default:
-      // generateHTML();
-      // console.log(employeeArr[0]);
       break;
   }})
 };
 
-// module.exports = employeeArr
 const init = () => {
   managerInput()
 };
 init();
 
-module.exports = {managerArr,engineerArr,internArr}
+module.exports = employeeArr;
