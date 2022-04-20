@@ -1,9 +1,13 @@
+const fs = require('fs');
+// const generateHTML = require('./');
 const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const inquirer = require('inquirer')
-const employeeArr = [];
+const managerArr = [];
+const engineerArr = [];
+const internArr = [];
 
 const managerInput = () => {
   return inquirer.prompt([
@@ -28,11 +32,11 @@ const managerInput = () => {
       message:"Please enter your manager's office number."
     },
   ]).then(answers=>{
-    console.log(answers);
+    // console.log(answers);
     const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
-    console.log(manager);
-    employeeArr.push(manager);
-    console.log(employeeArr);
+    // console.log(manager);
+    managerArr.push(manager);
+    // console.log(employeeArr);
     employeeTypeInput();
   })
 };
@@ -42,29 +46,29 @@ const managerInput = () => {
   {
     name:"name",
     type:"input",
-    message:"Please enter your engineer's name.", 
+    message:"Please enter your engineer's name.",
   },
   {
     name:"id",
     type:"input",
-    message:"Please enter your engineer's ID number.",  
+    message:"Please enter your engineer's ID number.",
   },
   {
     name:"email",
     type:"input",
-    message:"Please enter your engineer's e-mail address.", 
+    message:"Please enter your engineer's e-mail address.",
   },
   {
     name:"gitHub",
     type:"input",
-    message:"Please enter your engineer's GitHub username.", 
+    message:"Please enter your engineer's GitHub username.",
   },
     ]) .then(answers=>{
-      console.log(answers);
+      // console.log(answers);
       const engineer = new Engineer (answers.name, answers.id, answers.email, answers.gitHub);
-      console.log(engineer);
-      employeeArr.push(engineer);
-      console.log(employeeArr);
+      // console.log(engineer);
+      engineerArr.push(engineer);
+      // console.log(employeeArr);
       employeeTypeInput();
   })
   };
@@ -74,29 +78,29 @@ const managerInput = () => {
   {
     name:"name",
     type:"input",
-    message:"Please enter your intern's name.", 
+    message:"Please enter your intern's name.",
   },
   {
     name:"id",
     type:"input",
-    message:"Please enter your intern's ID number.",  
+    message:"Please enter your intern's ID number.",
   },
   {
     name:"email",
     type:"input",
-    message:"Please enter your intern's e-mail address.",  
+    message:"Please enter your intern's e-mail address.",
   },
   {
     name:"school",
     type:"input",
-    message:"Please enter the name of your intern's school.",  
+    message:"Please enter the name of your intern's school.",
   },
 ]).then(answers=>{
-  console.log(answers);
+  // console.log(answers);
   const intern = new Intern (answers.name, answers.id, answers.email, answers.school);
-  console.log(intern);
-  employeeArr.push(intern);
-  console.log(employeeArr);
+  // console.log(intern);
+  internArr.push(intern);
+  // console.log(employeeArr);
   employeeTypeInput();
 })
 };
@@ -118,8 +122,14 @@ const employeeTypeInput = () => {
       internInput();
       break;
     case "I'm Finished Building My Team":
-      // employeeArr.forEach((employee)=>console.log(employee.name, employee.email, employee.id, employee.email, employee.github, employee.school, employee.officeNumber));
-      employeeArr.forEach(employee => { console.log(employee)})
+  // {(employeeArr) => fs.writeFileSync('./dist/renderedOutput.HTML', generateHTML(employeeArr))
+  // .then(()=> console.log('you did it, buddy'))
+  // .then(() => console.log('Successfully wrote to HTML'))
+  // .catch((err) => console.error(err))}
+      // generateHTML();
+      // console.log(employeeArr)
+        // console.log(employeeArr);
+      //   console.log(data);
       break;
     default:
       // generateHTML();
@@ -128,21 +138,10 @@ const employeeTypeInput = () => {
   }})
 };
 
-
-// module.exports = generateHTML;
-
+// module.exports = employeeArr
 const init = () => {
   managerInput()
-  // .then((answers) => fs.writeFileSync('./dist/renderedoutput.HTML', generateHTML(answers)))
-  // .then((answers)=> console.log('you did it, buddy'))
-  // .then(() => console.log('Successfully wrote to HTML'))
-  // .catch((err) => console.error(err))
 };
 init();
 
-// // //a function to generate HTML
-// const generateHTML = () => {
-//   console.log(employeeArr)
-// //   return  
-// };
-// generateHTML();
+module.exports = {managerArr,engineerArr,internArr}

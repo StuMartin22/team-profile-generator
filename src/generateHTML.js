@@ -1,20 +1,18 @@
-const Employee = require('./lib/employee');
-const Manager = require('./lib/manager');
-const Engineer = require('./lib/engineer');
-const Intern = require('./lib/intern');
+const Employee = require('../lib/employee');
+const Manager = require('../lib/manager');
+const Engineer = require('../lib/engineer');
+const Intern = require('../lib/intern');
 const inquirer = require('inquirer');
-const employeeArr = [] = require('./index')
-const managerInfo = employeeArr.manager
+const { moduleExpression } = require('@babel/types');
+const managerArr = require('../index')
+const engineerArr = required('../index')
+const internArr = required('../index')
 
-// employeeArr
+console.log(managerArr);
+console.log(engineerArr);
+console.log(internArr);
 
-// mobiles.forEach(employeeArr => {
-//     for (let key in mobile) {
-//         console.log(`${key}: ${mobile[key]}`);
-//     }
-
-// function generateHTML();
-// const generateHTML = ({ name, location, github, linkedin }) =>
+// return
 //   `<!DOCTYPE html>
 // <html lang="en">
 // <head>
@@ -25,10 +23,11 @@ const managerInfo = employeeArr.manager
 //   <title>Team Builder</title>
 // </head>
 // <body>
-{/* <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> */}
-{/* <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> */}
-// <body>
+// <h1>Team</h1>
 
+// <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+// <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+// <body>`
+// }
 
-// write file and append file - can append parts together.
-
+// write file and append file - can append parts together
