@@ -119,48 +119,23 @@ const employeeTypeInput = () => {
       internInput();
       break;
     case "I'm Finished Building My Team":
-      console.log(employeeArr)
-
-
-      let selectedEmployee = "";
-      let roleHolder = "";
-      let managerHolder = "";
-      let engineerHolder = "";
-      let internHolder = "";
-      let emailHolder = "";
-      let idHolder = "";
-      let nameHolder = "";
-
-      for (let index = 0; index < employeeArr.length; index++) {
-        selectedEmployee = employeeArr[index];
-        // console.log(selectedEmployee.getName());
-        // console.log(selectedEmployee.getEmail());
-        // console.log(selectedEmployee.getId());
-        // console.log(selectedEmployee.getRole());
-        roleHolder = selectedEmployee.getRole();
-        emailHolder = selectedEmployee.getEmail();
-        idHolder = selectedEmployee.getId();
-        nameHolder = selectedEmployee.getName();
-        if (roleHolder == "Manager") {
-          managerHolder =selectedEmployee.getOfficeNumber();
-        } else if (roleHolder == "Engineer") {
-          engineerHolder = selectedEmployee.getgitHub();
-        } else if (roleHolder == "Intern") {
-          internHolder = selectedEmployee.getSchool();
-      }
-    }
-    break;
-    default:
+      console.log('done!')
+      .then(() => fs.writeFileSync('./dist/renderedOutput.html', teamBuilder()))
+      .then(() => console.log('Success!'))
+      .catch((err) => console.error(err));
       break;
-      //start html function
-      //add employees to card functions
-      //bottom html function
-      //write to html function
-      // .then(()=> console.log('you did it, buddy'))
-      // .then(() => console.log('Successfully wrote to HTML'))
-      // .catch((err) => console.error(err))}
-  }})
+      default:
+      break;
+    }
+  })
 };
+
+
+  for (let index = 0; index < employeeArr.length; index++) {
+    selectedEmployee = employeeArr[index];
+};
+
+
 
 
 
@@ -169,7 +144,5 @@ const init = () => {
 };
 init();
 
-module.exports = employeeArr;
+module.exports = employeeArr
 
-let data =  "some html code"+nameHolder+"html code";
-//some html code Jordan html code

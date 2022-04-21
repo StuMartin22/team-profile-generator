@@ -3,15 +3,28 @@ const Manager = require('../lib/manager');
 const Engineer = require('../lib/engineer');
 const Intern = require('../lib/intern');
 const inquirer = require('inquirer');
-const employeeArr = require('../index');
-const selectedEmployee = require('../index');
-const roleHolder = require('../index');
-const managerHolder = require('../index');
-const engineerHolder = require('../index');
-const internHolder = require('../index');
-const emailHolder = require('../index');
-const idHolder = require('../index');
-const nameHolder = require('../index');
+const employeeArr = require('index.js');
+const employeeArr = require('index.js')
+
+
+const employeeArr = require('index.js')
+
+function teamBuilder() {
+    const team = []
+    team.push(htmlStarter());
+    for (let i = 0; i < employeeArr.length; i++) {
+        const element = employeeArr[i];
+        if (employeeArr[i].getRole() == 'Manager'){
+            team.push(createManagerCard());
+        }else if (employeeArr[i].getRole == 'Engineer'){
+            team.push(createEngineerCard());
+        } else if (employeeArr[i].getRole() == 'Intern'){
+            team.push(createInternCard());
+        }
+    }
+    team.push(htmlEnder());
+    return team.join('')
+}
 
 function htmlStarter(){
     return
@@ -33,25 +46,63 @@ function htmlStarter(){
 </div>`
 }
 
-function htmlClassCards(){
-    return
-    `<div class="card" style="width: 18rem;">
-    <div class="card-header">
-      JOB ROLE GOES HERE
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item name">NAME GOES HERE</li>
-      <li class="list-group-item email">EMAIL GOES HERE</li>
-      <li class="list-group-item emID">EMPLOYEE ID GOES HERE</li>
-      <li class="list-group-item extra">EXTRA THING GOES HERE</li>
-    </ul>
-  </div>`
-}
-
-
 function htmlEnder() {
     return
 `<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <body>`
 }
+
+
+// for (let i = 0; i < employeeArr.length; i++) {
+//     const element = employeeArr[i];
+//     if (employeeArr[i].getRole() == 'Manager'){
+//         createManagerCard();
+//     }else if (employeeArr[i].getRole == 'Engineer'){
+//         createEngineerCard();
+//     } else if (employeeArr[i].getRole() == 'Intern'){
+//         createInternCard();
+//     }
+// }
+
+function createManagerCard() {
+    return `<div class="card" style="width: 18rem;">
+    <div class="card-header" id="title">
+      Manager
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item name">${Manager.getName()}</li>
+      <li class="list-group-item email" href="mailto:${Manager.getEmail()}">${Manager.getEmail()}</li>
+      <li class="list-group-item emID">${Manager.getId()}</li>
+      <li class="list-group-item extra">${Manager.getOfficeNumber()}</li>
+    </ul>
+    </div>`
+};
+
+function createEngineerCard() {
+    return `<div class="card" style="width: 18rem;">
+    <div class="card-header" id="title">
+      Engineer
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item name">${Engineer.getName()}</li>
+      <li class="list-group-item email" href="mailto:${Engineer.getEmail()}">${Engineer.getEmail()}</li>
+      <li class="list-group-item emID">${Engineer.getId()}</li>
+      <li class="list-group-item extra">${Engineer.getgitHub()}</li>
+    </ul>
+    </div>`
+};
+
+function createInternCard() {
+    return `<div class="card" style="width: 18rem;">
+    <div class="card-header" id="title">
+      Intern
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item name">${Intern.getName()}</li>
+      <li class="list-group-item email" href="mailto:${Intern.getEmail()}">${Intern.getEmail()}</li>
+      <li class="list-group-item emID">${Intern.getId()}</li>
+      <li class="list-group-item extra">${Intern.getSchool()}</li>
+    </ul>
+    </div>`
+};
