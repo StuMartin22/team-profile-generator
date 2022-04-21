@@ -106,3 +106,5 @@ function createInternCard() {
     </ul>
     </div>`
 };
+
+module.exports = teamBuilder();

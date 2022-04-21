@@ -4,6 +4,7 @@ const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const inquirer = require('inquirer');
 const employeeArr = []
+const teamBuilder = require('./src/generateHTML')
 
 
 const managerInput = () => {
@@ -119,22 +120,17 @@ const employeeTypeInput = () => {
       internInput();
       break;
     case "I'm Finished Building My Team":
-      console.log('done!')
-      .then(() => fs.writeFileSync('./dist/renderedOutput.html', teamBuilder()))
-      .then(() => console.log('Success!'))
-      .catch((err) => console.error(err));
+    sendIt();
       break;
-      default:
-      break;
-    }
-  })
-};
+}});
 
-
-  for (let index = 0; index < employeeArr.length; index++) {
-    selectedEmployee = employeeArr[index];
-};
-
+function sendIt (){
+  fs.writeFileSync('./dist/renderedOutput.html', teamBuilder(),(err) => {
+    if(err) {
+      console.log(err);
+    } else (console.log('done!'));
+  });
+}}
 
 
 
@@ -144,5 +140,5 @@ const init = () => {
 };
 init();
 
-module.exports = employeeArr
+module.exports = {employeeArr, teamBuilder}
 
