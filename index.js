@@ -4,7 +4,6 @@ const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const inquirer = require('inquirer');
 const employeeArr = []
-// const {figgerItOut} = require('./src/generateHTML')
 
 
 const managerInput = () => {
@@ -121,8 +120,8 @@ const employeeTypeInput = () => {
       break;
     case "I'm Finished Building My Team":
       console.log(employeeArr)
-      // console.log(employee.getName())
-      // figgerItOut();
+
+
       let selectedEmployee = "";
       let roleHolder = "";
       let managerHolder = "";
@@ -131,12 +130,13 @@ const employeeTypeInput = () => {
       let emailHolder = "";
       let idHolder = "";
       let nameHolder = "";
+
       for (let index = 0; index < employeeArr.length; index++) {
         selectedEmployee = employeeArr[index];
-        console.log(selectedEmployee.getName());
-        console.log(selectedEmployee.getEmail());
-        console.log(selectedEmployee.getId());
-        console.log(selectedEmployee.getRole());
+        // console.log(selectedEmployee.getName());
+        // console.log(selectedEmployee.getEmail());
+        // console.log(selectedEmployee.getId());
+        // console.log(selectedEmployee.getRole());
         roleHolder = selectedEmployee.getRole();
         emailHolder = selectedEmployee.getEmail();
         idHolder = selectedEmployee.getId();
@@ -147,28 +147,29 @@ const employeeTypeInput = () => {
           engineerHolder = selectedEmployee.getgitHub();
         } else if (roleHolder == "Intern") {
           internHolder = selectedEmployee.getSchool();
-        }
-        let data =  "some html code"+nameHolder+"html code";
-        //some html code Jordan html code
-        // if ()
-
-        //title selectedemployee.getrole
-
       }
-
-  // .then(()=> console.log('you did it, buddy'))
-  // .then(() => console.log('Successfully wrote to HTML'))
-  // .catch((err) => console.error(err))}
-      break;
+    }
+    break;
     default:
       break;
+      //start html function
+      //add employees to card functions
+      //bottom html function
+      //write to html function
+      // .then(()=> console.log('you did it, buddy'))
+      // .then(() => console.log('Successfully wrote to HTML'))
+      // .catch((err) => console.error(err))}
   }})
 };
 
+
+
 const init = () => {
   managerInput()
-  // console.log (employeeArr);
 };
 init();
 
 module.exports = employeeArr;
+
+let data =  "some html code"+nameHolder+"html code";
+//some html code Jordan html code

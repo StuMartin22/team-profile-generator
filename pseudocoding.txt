@@ -26,12 +26,12 @@
 <!-- 4. Create an array to store all of your employees -->
 
 5. Create function to initialize the app, divide it up based on employee roles
-function (manager) => data ${answers.data} 
+function (manager) => data ${answers.data}
 
-do you want to add another employee? 
+do you want to add another employee?
 - list of employee type
     - employee info based on type
-    
+
     - All teams need at least one manager -- create a nested function to generate a manager with inquirer prompts
     - Create a new Manager object using the Manager class and the data from the inquirer prompts
     -Push that object to the array of employees
