@@ -49,16 +49,16 @@ function htmlEnder() {
 <body>`
 }
 
-function createManagerCard() {
+function createManagerCard(manager) {
     return `<div class="card" style="width: 18rem;">
     <div class="card-header" id="title">
       Manager
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item name">${Manager.getName()}</li>
-      <li class="list-group-item email" href="mailto:${Manager.getEmail()}">${Manager.getEmail()}</li>
-      <li class="list-group-item emID">${Manager.getId()}</li>
-      <li class="list-group-item extra">${Manager.getOfficeNumber()}</li>
+      <li class="list-group-item name">${manager.getName()}</li>
+      <li class="list-group-item email" href="mailto:${manager.getEmail()}">${manager.getEmail()}</li>
+      <li class="list-group-item emID">${manager.getId()}</li>
+      <li class="list-group-item extra">${manager.getOfficeNumber()}</li>
     </ul>
     </div>`
 };
@@ -92,4 +92,6 @@ function createInternCard() {
 };
 
 // module.exports = teamBuilder();
-module.exports =  {htmlStarter, htmlEnder, createManagerCard, createEngineerCard, createInternCard}
+module.exports =  {
+  htmlStarter, htmlEnder, createManagerCard, createEngineerCard, createInternCard
+}

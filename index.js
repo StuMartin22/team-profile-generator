@@ -4,11 +4,12 @@ const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const inquirer = require('inquirer');
 const employeeArr = []
-const htmlStarter = require('./src/generateHTML');
-const createManagerCard = require('./src/generateHTML');
-const createEngineerCard = require('./src/generateHTML');
-const createInternCard = require('./src/generateHTML');
-const htmlEnder = require('./src/generateHTML');
+// const htmlStarter = require('./src/generateHTML');
+// const createManagerCard = require('./src/generateHTML');
+// const createEngineerCard = require('./src/generateHTML');
+// const createInternCard = require('./src/generateHTML');
+// const htmlEnder = require('./src/generateHTML');
+const {createManagerCard, createEngineerCard, createInternCard, htmlEnder, htmlStarter} = require('./src/generateHTML')
 // const teamBuilder = require('./src/generateHTML')
 
 
@@ -130,6 +131,7 @@ const employeeTypeInput = () => {
 }});
 
 function sendIt (){
+  console.log(teamBuilder())
   fs.writeFileSync('./dist/renderedOutput.html', teamBuilder(),(err) => {
     if(err) {
       console.log(err);
@@ -143,21 +145,24 @@ function teamBuilder() {
   console.log(htmlStarter)
   for (let i = 0; i < employeeArr.length; i++) {
       const element = employeeArr[i];
+      console.log(element);
       if (element.getRole() == 'Manager'){
-          // team.push(createManagerCard);
-          console.log(createManagerCard)
+        const managerCard = createManagerCard(element)
+        console.log(managerCard);
+          team.push(managerCard);
+          // console.log(createManagerCard)
       }else if (element.getRole() == 'Engineer'){
-          // team.push(createEngineerCard);
-          console.log(createEngineerCard)
+          team.push(createEngineerCard());
+          // console.log(createEngineerCard)
       } else if (element.getRole() == 'Intern'){
-          // team.push(createInternCard);
-          console.log(createInternCard);
+          team.push(createInternCard());
+          // console.log(createInternCard);
       }
   }
-  // team.push(htmlEnder);
-  console.log(htmlEnder)
-  // return team.join('');
-  console.log(team.join(''));
+  team.push(htmlEnder);
+  console.log(team)
+  return team.join('');
+  // console.log(team.join(''));
 }
 
 
