@@ -3,28 +3,24 @@ const Manager = require('../lib/manager');
 const Engineer = require('../lib/engineer');
 const Intern = require('../lib/intern');
 const inquirer = require('inquirer');
-const employeeArr = require('index.js');
-const employeeArr = require('index.js')
+const employeeArr = require('../index.js')
 
-
-const employeeArr = require('index.js')
-
-function teamBuilder() {
-    const team = []
-    team.push(htmlStarter());
-    for (let i = 0; i < employeeArr.length; i++) {
-        const element = employeeArr[i];
-        if (employeeArr[i].getRole() == 'Manager'){
-            team.push(createManagerCard());
-        }else if (employeeArr[i].getRole == 'Engineer'){
-            team.push(createEngineerCard());
-        } else if (employeeArr[i].getRole() == 'Intern'){
-            team.push(createInternCard());
-        }
-    }
-    team.push(htmlEnder());
-    return team.join('')
-}
+// function teamBuilder() {
+//     const team = []
+//     team.push(htmlStarter());
+//     for (let i = 0; i < employeeArr.length; i++) {
+//         const element = employeeArr[i];
+//         if (element.getRole() == 'Manager'){
+//             team.push(createManagerCard());
+//         }else if (element.getRole == 'Engineer'){
+//             team.push(createEngineerCard());
+//         } else if (element.getRole() == 'Intern'){
+//             team.push(createInternCard());
+//         }
+//     }
+//     team.push(htmlEnder());
+//     return team.join('')
+// }
 
 function htmlStarter(){
     return
@@ -52,18 +48,6 @@ function htmlEnder() {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <body>`
 }
-
-
-// for (let i = 0; i < employeeArr.length; i++) {
-//     const element = employeeArr[i];
-//     if (employeeArr[i].getRole() == 'Manager'){
-//         createManagerCard();
-//     }else if (employeeArr[i].getRole == 'Engineer'){
-//         createEngineerCard();
-//     } else if (employeeArr[i].getRole() == 'Intern'){
-//         createInternCard();
-//     }
-// }
 
 function createManagerCard() {
     return `<div class="card" style="width: 18rem;">
@@ -107,4 +91,5 @@ function createInternCard() {
     </div>`
 };
 
-module.exports = teamBuilder();
+// module.exports = teamBuilder();
+module.exports =  {htmlStarter, htmlEnder, createManagerCard, createEngineerCard, createInternCard}
