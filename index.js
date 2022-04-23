@@ -9,7 +9,7 @@ const employeeArr = []
 // const createEngineerCard = require('./src/generateHTML');
 // const createInternCard = require('./src/generateHTML');
 // const htmlEnder = require('./src/generateHTML');
-const {createManagerCard, createEngineerCard, createInternCard, htmlEnder, htmlStarter} = require('./src/generateHTML')
+const {createManagerCard, createEngineerCard, createInternCard, htmlEnder, htmlStarter, footerHolder, headerHolder} = require('./src/generateHTML')
 // const teamBuilder = require('./src/generateHTML')
 
 
@@ -141,25 +141,27 @@ function sendIt (){
 
 function teamBuilder() {
   const team = []
-  // team.push(htmlStarter);
-  console.log(htmlStarter)
+  team.push(headerHolder);
+  // console.log(htmlStarter)
   for (let i = 0; i < employeeArr.length; i++) {
       const element = employeeArr[i];
       console.log(element);
       if (element.getRole() == 'Manager'){
         const managerCard = createManagerCard(element)
-        console.log(managerCard);
+        // console.log(managerCard);
           team.push(managerCard);
           // console.log(createManagerCard)
       }else if (element.getRole() == 'Engineer'){
-          team.push(createEngineerCard());
+        const engineerCard = createEngineerCard(element);
+          team.push(engineerCard);
           // console.log(createEngineerCard)
       } else if (element.getRole() == 'Intern'){
-          team.push(createInternCard());
+        const internCard = createInternCard(element);
+          team.push(internCard);
           // console.log(createInternCard);
       }
   }
-  team.push(htmlEnder);
+  team.push(footerHolder);
   console.log(team)
   return team.join('');
   // console.log(team.join(''));
