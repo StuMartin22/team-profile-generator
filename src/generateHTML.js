@@ -6,24 +6,29 @@ const headerHolder=
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <link rel="stylesheet" href="./dist/styles.css">
+  <link rel="stylesheet" href="./styles.css">
   <title>Team Builder</title>
 </head>
 <body>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-  <h1 class="display-4">Fluid jumbotron</h1>
-  <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  <h1 class="display-4">Team Generator</h1>
+  <p class="lead">Below is the team and their information:</p>
 </div>
-</div>`
+</div>
+<div class="container-fluid">
+    <div class="row">`
 //create const that holds boiler plate footer hmtl info.
-const footerHolder = `<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+const footerHolder = `</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>`
 //card html block with information from each manager added to team.
 function createManagerCard(manager) {
-    return `<div class="card" style="width: 18rem;">
-    <div class="card-header" id="title">
+    return `
+    <div class="card" style="width: 33%">
+    <div class="card-header font-weight-bold" id="title">
       Manager
     </div>
     <ul class="list-group list-group-flush">
@@ -36,8 +41,9 @@ function createManagerCard(manager) {
 };
 //card html block with information from each engineer added to team.
 function createEngineerCard(engineer) {
-    return `<div class="card" style="width: 18rem;">
-    <div class="card-header" id="title">
+    return `
+    <div class="card" style="width: 33%">
+    <div class="card-header font-weight-bold" id="title">
       Engineer
     </div>
     <ul class="list-group list-group-flush">
@@ -50,8 +56,9 @@ function createEngineerCard(engineer) {
 };
 //card html block with information from each intern added to team.
 function createInternCard(intern) {
-    return `<div class="card" style="width: 18rem;">
-    <div class="card-header" id="title">
+    return `
+    <div class="card" style="width: 33%">
+    <div class="card-header font-weight-bold" id="title">
       Intern
     </div>
     <ul class="list-group list-group-flush">
