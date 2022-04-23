@@ -9,8 +9,8 @@ const headerHolder=
   <link rel="stylesheet" href="./styles.css">
   <title>Team Builder</title>
 </head>
-<body>
-<div class="jumbotron jumbotron-fluid">
+<body class="bg-secondary">
+<div class="jumbotron jumbotron-fluid bg-dark text-white">
   <div class="container">
   <h1 class="display-4">Team Generator</h1>
   <p class="lead">Below is the team and their information:</p>
@@ -28,14 +28,14 @@ const footerHolder = `</div>
 function createManagerCard(manager) {
     return `
     <div class="card" style="width: 33%">
-    <div class="card-header font-weight-bold" id="title">
+    <div class="card-header font-weight-bold bg-primary" id="title">
       Manager
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item name">${manager.getName()}</li>
-      <li class="list-group-item email" href="mailto:${manager.getEmail()}">${manager.getEmail()}</li>
-      <li class="list-group-item emID">${manager.getId()}</li>
-      <li class="list-group-item extra">${manager.getOfficeNumber()}</li>
+      <li class="list-group-item bg-light name">${manager.getName()}</li>
+      <li class="list-group-item bg-light email" href="mailto:${manager.getEmail()}">${manager.getEmail()}</li>
+      <li class="list-group-item bg-light emID">${manager.getId()}</li>
+      <li class="list-group-item bg-light extra">${manager.getOfficeNumber()}</li>
     </ul>
     </div>`
 };
@@ -43,14 +43,14 @@ function createManagerCard(manager) {
 function createEngineerCard(engineer) {
     return `
     <div class="card" style="width: 33%">
-    <div class="card-header font-weight-bold" id="title">
+    <div class="card-header font-weight-bold bg-primary" id="title">
       Engineer
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item name">${engineer.getName()}</li>
-      <li class="list-group-item email" href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</li>
-      <li class="list-group-item emID">${engineer.getId()}</li>
-      <li class="list-group-item extra">${engineer.getgitHub()}</li>
+      <li class="list-group-item bg-light name">${engineer.getName()}</li>
+      <li class="list-group-item bg-light email" href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</li>
+      <li class="list-group-item bg-light emID">${engineer.getId()}</li>
+      <li class="list-group-item bg-light extra">${engineer.getgitHub()}</li>
     </ul>
     </div>`
 };
@@ -58,14 +58,14 @@ function createEngineerCard(engineer) {
 function createInternCard(intern) {
     return `
     <div class="card" style="width: 33%">
-    <div class="card-header font-weight-bold" id="title">
+    <div class="card-header font-weight-bold bg-primary" id="title">
       Intern
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item name">${intern.getName()}</li>
-      <li class="list-group-item email" href="mailto:${intern.getEmail()}">${intern.getEmail()}</li>
-      <li class="list-group-item emID">${intern.getId()}</li>
-      <li class="list-group-item extra">${intern.getSchool()}</li>
+      <li class="list-group-item bg-light name">${intern.getName()}</li>
+      <li class="list-group-item bg-light email" href="mailto:${intern.getEmail()}">${intern.getEmail()}</li>
+      <li class="list-group-item bg-light emID">${intern.getId()}</li>
+      <li class="list-group-item bg-light extra">${intern.getSchool()}</li>
     </ul>
     </div>`
 };
