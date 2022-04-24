@@ -33,7 +33,7 @@ function createManagerCard(manager) {
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item bg-light name">${manager.getName()}</li>
-      <li class="list-group-item bg-light email" href="mailto:${manager.getEmail()}">${manager.getEmail()}</li>
+      <li class="list-group-item bg-light email"><a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
       <li class="list-group-item bg-light emID">${manager.getId()}</li>
       <li class="list-group-item bg-light extra">${manager.getOfficeNumber()}</li>
     </ul>
@@ -48,7 +48,7 @@ function createEngineerCard(engineer) {
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item bg-light name">${engineer.getName()}</li>
-      <li class="list-group-item bg-light email" href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</li>
+      <li class="list-group-item bg-light email"><a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
       <li class="list-group-item bg-light emID">${engineer.getId()}</li>
       <li class="list-group-item bg-light extra">${engineer.getgitHub()}</li>
     </ul>
@@ -63,7 +63,7 @@ function createInternCard(intern) {
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item bg-light name">${intern.getName()}</li>
-      <li class="list-group-item bg-light email" href="mailto:${intern.getEmail()}">${intern.getEmail()}</li>
+      <li class="list-group-item bg-light email"><a href="mailto:${intern.getEmail()}"> ${intern.getEmail()}{</a></li>
       <li class="list-group-item bg-light emID">${intern.getId()}</li>
       <li class="list-group-item bg-light extra">${intern.getSchool()}</li>
     </ul>
